@@ -2,7 +2,9 @@ import TI.GPIO as GPIO
 
 GPIO.setmode(GPIO.BOARD)
 
-BUTTON_PIN = 13
+user = input("Pin number: ")
+BUTTON_PIN = user
+
 GPIO.setup(BUTTON_PIN, GPIO.IN)
 
 try:
