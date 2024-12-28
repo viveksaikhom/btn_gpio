@@ -13,6 +13,7 @@ try:
     while True:
         if GPIO.input(BUTTON_PIN) == GPIO.LOW:
             print("Button Pressed!")
+            GPIO.cleanup()
             break
         time.sleep(0.3)
 
