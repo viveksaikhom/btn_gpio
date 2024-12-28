@@ -7,6 +7,8 @@ BUTTON_PIN = 13
 
 GPIO.setup(BUTTON_PIN, GPIO.IN)
 
+GPIO.cleanup()
+
 print("Waiting for button press...")
 
 try:
