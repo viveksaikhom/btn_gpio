@@ -3,7 +3,7 @@ import TI.GPIO as GPIO
 GPIO.setmode(GPIO.BOARD)
 
 user = input("Pin number: ")
-BUTTON_PIN = user
+BUTTON_PIN = int(user)
 
 GPIO.setup(BUTTON_PIN, GPIO.OUT)
 
