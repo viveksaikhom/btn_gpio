@@ -7,22 +7,17 @@ BUTTON_PIN = 13
 
 GPIO.setup(BUTTON_PIN, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
-GPIO.add_event_detect(BUTTON_PIN, GPIO.BOTH, bouncetime=200)
-
-print("Waiting for button presses...")
+print("Waiting for button press...")
 
 try:
     while True:
-        if GPIO.event_detected(BUTTON_PIN):
-            if GPIO.input(BUTTON_PIN) == GPIO.LOW:
-                print("Button Pressed!")
-            else:
-                print("Button Released!")
-        time.sleep(0.1)
-
+        if GPIO.input(BUTTON_PIN) == GPIO.LOW:
+            print("Button Pressed! Exiting program.")
+            break
+        time.sleep(0.3)
 
 except KeyboardInterrupt:
-    print("\nExiting program.")
+    print("\nProgram interrupted manually.")
 
 finally:
     GPIO.cleanup()
